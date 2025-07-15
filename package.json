@@ -1,0 +1,26 @@
+{
+  "name": "erp_simples",
+  "version": "1.0.0",
+  "description": "/src   /modules     /users     /finance     /parties     /sales     /inventory   /infrastructure     /db   /shared     /auth     /errors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/dotenv": "^6.1.1",
+    "dotenv": "^17.2.0",
+    "jose": "^6.0.11",
+    "pg": "^8.16.3",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.25",
+    "zod": "^4.0.5"
+  }
+}
