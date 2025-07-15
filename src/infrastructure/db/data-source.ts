@@ -21,6 +21,7 @@ const CentralDataSource = new DataSource({
  username: env.DB_USERNAME,
  password: env.DB_PASSWORD,
  database: env.DB_DATABASE,
+ synchronize: process.env.NODE_ENV === 'dev',
  entities: [
   CashFlow,
   BankReconciliation,
