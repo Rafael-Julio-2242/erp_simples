@@ -1,9 +1,16 @@
 import { Router } from 'express';
+import createUser from './create-user.route';
+import updateUser from './update-user.route';
+import findAllUser from './find-all.route';
+import findUser from './find.route';
+import deleteUser from './delete.route';
 
 const router = Router();
 
-// TODO
-// ESSA ROTA VAI FICAR RESPONSÁVEL POR JUNTAR TODAS AS ROTAS DE USUÁRIOS EM UM LUGAR SÓ
-// EM '/users'
+router.use(createUser);
+router.use(updateUser);
+router.use(findAllUser);
+router.use(findUser);
+router.use(deleteUser);
 
 export default router;
