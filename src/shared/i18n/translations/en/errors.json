@@ -1,0 +1,7 @@
+{
+ "userAlreadyExists": "User already exists",
+ "userNotFound": "User not found",
+ "noDataToUpdateUser": "No data to update user",
+ "moduleNotFound": "Module not found",
+ "moduleUserNotFound": "Module user not found"
+}

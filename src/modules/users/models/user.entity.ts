@@ -1,5 +1,5 @@
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Module } from './module.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { UserModule } from './user_module.entity';
 
 @Entity("users")
 export class User {
@@ -15,12 +15,10 @@ export class User {
  @Column({ nullable: false })
  password!: string;
 
- @ManyToMany(() => Module, (module) => module.users, { cascade: true })
- @JoinTable({
-  name: 'user_modules',
-  joinColumn: { name: "user_id", referencedColumnName: "id" },
-  inverseJoinColumn: { name: "module_id", referencedColumnName: "id" }
- })
- modules!: Module[]
+ @OneToMany(() => UserModule, um => um.user)
+userModules!: UserModule[];
+
+ @Column({ nullable: false, default: false }) 
+ isAdmin!: boolean
 }
 

@@ -1,5 +1,5 @@
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./user.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { UserModule } from "./user_module.entity";
 
 
 @Entity("modules")
@@ -10,6 +10,6 @@ export class Module {
  @Column({ unique: true, nullable: false })
  name!: string;
 
- @ManyToMany(() => User, (user) => user.modules)
- users!: User[];
+ @OneToMany(() => UserModule, um => um.module)
+ userModules!: UserModule[];
 }
