@@ -18,6 +18,7 @@ export class UpdateUserUseCase {
     }
 
     if (!userDto.name && !userDto.email && !userDto.password) {
+      throw this.errors.noDataToUpdateUser();
     }
 
     if (userDto.name) user.name = userDto.name;

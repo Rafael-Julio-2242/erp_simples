@@ -1,7 +1,9 @@
 {
- "userAlreadyExists": "Usuário já existe",
- "userNotFound": "Usuário não encontrado",
- "noDataToUpdateUser": "Nenhuma informação para atualizar o usuário",
- "moduleNotFound": "Módulo não encontrado",
- "moduleUserNotFound": "Módulo do usuário não encontrado"
+  "errors": {
+    "userAlreadyExists": "Usuário já existe",
+    "userNotFound": "Usuário não encontrado",
+    "noDataToUpdateUser": "Nenhuma informação para atualizar o usuário",
+    "moduleNotFound": "Módulo não encontrado",
+    "moduleUserNotFound": "Módulo do usuário não encontrado"
+  }
 }

@@ -35,12 +35,18 @@ async function createUser(req: Request, res: Response) {
 
  const useCase = await makeCreateUserUseCase(req);
 
+ 
  try {
+  console.log(req.t('errors.userAlreadyExists'));
   const user = await useCase.execute(userDto);
   res.status(201).json(user);
  } catch (e: any) {
   if (isErrorInterface(e)) {
-   res.status(400).json(e);
+   res.status(400).json({
+    type: e.type,
+    name: e.name,
+    error: e.message,
+   });
    return;
   }
   res.status(500).json({

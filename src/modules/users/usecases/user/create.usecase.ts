@@ -24,6 +24,15 @@ export class CreateUserUseCase {
     user.password = await this.hashService.hash(userDto.password);
     user.isAdmin = userDto.isAdmin || false;
 
-    return this.userRepository.create(user);
+    const createdUser = await this.userRepository.create(user);
+
+    const returnUser: Partial<User> = {
+      id: createdUser.id,
+      name: createdUser.name,
+      email: createdUser.email,
+      isAdmin: createdUser.isAdmin
+    } 
+
+    return returnUser;
   }
 }

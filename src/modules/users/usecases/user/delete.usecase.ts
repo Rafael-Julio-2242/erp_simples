@@ -7,11 +7,11 @@ export class DeleteUserUseCase {
     private errors: UserErrors
   ) {}
 
-  execute(id: number) {
-    const user = this.userRepository.findById(id);
+  async execute(id: number) {
+    const user = await this.userRepository.findById(id);
 
     if (!user) {
-      throw this.errors.noDataToUpdateUser();
+      throw this.errors.userNotFound();
     }
 
     return this.userRepository.delete(id);

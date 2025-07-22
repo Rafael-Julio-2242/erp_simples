@@ -18,9 +18,9 @@ export interface ErrorInterface extends Error {
   message: string;
 }
 
-export function isErrorInterface(error: unknown): error is ErrorInterface {
+export function isErrorInterface(error: any): error is ErrorInterface {
   return (
-    error instanceof Error &&
+    // error instanceof Error &&
     'name' in error &&
     'type' in error &&
     'message' in error &&

@@ -14,10 +14,10 @@ export class Order {
  @ManyToOne(() => User, { nullable: false })
  user!: User;
  
- @Column({ type: "timestamp", default: () => 'CURRENT_TIMESTAMP' })
+ @Column({ type: "timestamp", default: () => 'CURRENT_TIMESTAMP', name: "order_date" })
  order_date!: string;
 
- @Column({ type: 'text', default: () => 'pending' })
+ @Column({ type: 'text', name: "status" })
  status!: string;
 
  @Column({ nullable: false, type: 'decimal', precision: 12, scale: 2 })

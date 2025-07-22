@@ -4,7 +4,7 @@ import { Product } from "../../inventory/models/product.entity";
 
 
 @Entity("order_items")
-@Check(`"quantity > 0"`)
+@Check("quantity", "quantity > 0")
 export class OrderItem {
  @PrimaryGeneratedColumn()
  id!: number;
@@ -15,7 +15,7 @@ export class OrderItem {
  @ManyToOne(() => Product, { nullable: false })
  product!: Product;
 
- @Column({ nullable: false })
+ @Column({ nullable: false, name: "quantity" })
  quantity!: number;
 
  @Column({ nullable: false })

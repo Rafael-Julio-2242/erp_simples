@@ -9,8 +9,9 @@ import { InventoryTransaction } from "../../modules/inventory/models/inventory-t
 import { Party } from "../../modules/parties/models/party.entity";
 import { Order } from "../../modules/sales/models/orders.entity";
 import { OrderItem } from "../../modules/sales/models/order-item.entity";
-import Module from "module";
 import { User } from "../../modules/users/models/user.entity";
+import { UserModule } from "../../modules/users/models/user_module.entity";
+import { Module } from "../../modules/users/models/module.entity";
 
 const env = new Enviroment();
 
@@ -21,7 +22,8 @@ const CentralDataSource = new DataSource({
  username: env.DB_USERNAME,
  password: env.DB_PASSWORD,
  database: env.DB_DATABASE,
- synchronize: process.env.NODE_ENV === 'dev',
+ synchronize: true, // process.env.NODE_ENV === 'dev',
+ logging: false,
  entities: [
   CashFlow,
   BankReconciliation,
@@ -32,7 +34,8 @@ const CentralDataSource = new DataSource({
   Order,
   OrderItem,
   Module,
-  User
+  User,
+  UserModule
  ]
 });
 

@@ -9,34 +9,39 @@ ERP Simples é um projeto de código aberto desenvolvido para fins educacionais,
 ## 🚀 Funcionalidades
 
 ### Módulo de Usuários
+
 - ✅ CRUD Básico de Usuários
+
   - Criação, leitura, atualização e remoção de usuários
   - Validação de dados com Zod
   - Tratamento de erros personalizado
-
 - 🔒 Sistema de Módulos e Permissões
+
   - ✅ Estrutura de módulos implementada
   - ✅ Relacionamento muitos-para-muitos entre usuários e módulos
   - ✅ Controle de administração por módulo
   - 🔄 Autenticação e autorização em desenvolvimento
   - 🔄 Middleware de verificação de acesso em desenvolvimento
-
 - 👥 Perfis de Acesso
+
   - ✅ Usuários podem ser administradores globais (`isAdmin`)
   - ✅ Controle de acesso por módulo através da tabela `user_modules`
   - 🔄 Sistema de permissões granulares por módulo em desenvolvimento
 
 ### Módulo Financeiro (Em breve)
+
 - [ ] Contas a pagar
 - [ ] Contas a receber
 - [ ] Relatórios financeiros
 
 ### Módulo de Vendas (Em breve)
+
 - [ ] Cadastro de clientes
 - [ ] Pedidos de venda
 - [ ] Faturamento
 
 ### Módulo de Estoque (Em breve)
+
 - [ ] Cadastro de produtos
 - [ ] Controle de estoque
 - [ ] Movimentações
@@ -94,30 +99,31 @@ src/
 ### Instalação
 
 1. Clone o repositório:
+
    ```bash
    git clone https://github.com/seu-usuario/erp_simples.git
    cd erp_simples
    ```
-
 2. Instale as dependências:
+
    ```bash
    npm install
    # ou
    yarn
    ```
-
 3. Configure as variáveis de ambiente:
+
    ```bash
    cp .env.example .env
    # Edite o arquivo .env com suas configurações
    ```
-
 4. Execute as migrações do banco de dados:
+
    ```bash
    npm run typeorm migration:run
    ```
-
 5. Inicie o servidor de desenvolvimento:
+
    ```bash
    npm run dev
    ```

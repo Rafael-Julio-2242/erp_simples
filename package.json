@@ -4,7 +4,9 @@
   "description": "/src   /modules     /users     /finance     /parties     /sales     /inventory   /infrastructure     /db   /shared     /auth     /errors",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx ts-node-dev --respawn --transpile-only src/infrastructure/http/server.ts",
+    "build": "npx tsc && copyfiles -u 4 \"src/shared/i18n/translations/**/*\" dist/shared/i18n/translations",
+    "start": "node dist/infrastructure/http/server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^24.0.14",
+    "copyfiles": "^2.4.1",
     "typescript": "^5.8.3"
   },
   "dependencies": {

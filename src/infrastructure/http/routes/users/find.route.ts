@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { makeFindUserUseCase } from '../../../factories/user/find.factory';
 import { isErrorInterface } from '../../../../shared/errors/errors.interface';
+import { User } from '../../../../modules/users/models/user.entity';
 
 
 const router = Router();
@@ -12,7 +13,14 @@ async function find(req: Request, res: Response) {
 
  try {
   const user = await useCase.execute(Number(id));
-  res.status(200).json(user);
+
+  const partialUser: Partial<User> = {
+   id: user.id,
+   name: user.name,
+   email: user.email,
+   isAdmin: user.isAdmin,
+  };
+  res.status(200).json(partialUser);
  } catch (e: any) {
   if (isErrorInterface(e)) {
    res.status(400).json(e);
